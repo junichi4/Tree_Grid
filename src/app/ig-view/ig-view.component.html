@@ -1,0 +1,69 @@
+<div class="column-layout group">
+  <div class="row-layout group_1">
+    <h4 class="h4">
+      K-rad
+    </h4>
+    <p class="text">
+      印税・契約書システム ＞ TOP ＞ 当月売上明細取込
+    </p>
+    <igx-simple-combo type="border" [data]="menuTable1?.posts!" placeholder="0000：ログイン者名" displayKey="menu" class="single-select-combo"></igx-simple-combo>
+  </div>
+  <button igxButton="contained" igxRipple class="button">
+    <igx-icon>
+      home
+    </igx-icon>
+  </button>
+  <div class="column-layout group_2">
+    <div class="row-layout group_3">
+      <p class="text_1">
+        処理年月
+      </p>
+      <igx-input-group type="border" class="input">
+        <igx-suffix>
+          <igx-icon class="icon">
+            clear
+          </igx-icon>
+        </igx-suffix>
+        <input type="text" placeholder="2024/05" igxInput />
+      </igx-input-group>
+    </div>
+    <div class="row-layout group_4"></div>
+  </div>
+  <div class="row-layout group_5">
+    <button igxButton="contained" igxRipple [igxToggleAction]="dialog" class="button_1">
+      取込・売上明細作成
+    </button>
+    <igx-dialog [closeOnOutsideSelect]="true" #dialog>
+      <ng-container>
+        <p>取込・売上明細作成します。</p>
+      </ng-container>
+      <igx-dialog-actions>
+        <button igxButton="flat" igxRipple [igxToggleAction]="dialog">
+          キャンセル
+        </button>
+        <button igxButton="flat" igxRipple [igxToggleAction]="dialog">
+          OK
+        </button>
+      </igx-dialog-actions>
+    </igx-dialog>
+  </div>
+  <div class="column-layout group_6">
+    <igx-grid [data]="sampleTable1?.posts!" primaryKey="店（コード：店名）" height="730px" class="grid">
+      <igx-grid-toolbar>
+        <igx-grid-toolbar-actions>
+          <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+        </igx-grid-toolbar-actions>
+        <igx-grid-toolbar-title>Grid Toolbar</igx-grid-toolbar-title>
+      </igx-grid-toolbar>
+      <igx-column field="店（コード：店名）" dataType="string" header="店（コード：店名）" [selectable]="false"></igx-column>
+      <igx-paginator [perPage]="10"></igx-paginator>
+      <igx-column field="取込日付" dataType="string" header="取込日付" [selectable]="false"></igx-column>
+      <igx-column field="売上数" dataType="string" header="売上数" [selectable]="false"></igx-column>
+      <igx-column field="販売定価" dataType="string" header="販売定価" [selectable]="false"></igx-column>
+      <igx-column field="正味金額" dataType="string" header="正味金額" [selectable]="false"></igx-column>
+      <igx-column field="消費税" dataType="string" header="消費税" [selectable]="false"></igx-column>
+      <igx-column field="請求金額" dataType="string" header="請求金額" [selectable]="false"></igx-column>
+      <igx-column field="販売価格" dataType="string" header="販売価格" [selectable]="false"></igx-column>
+    </igx-grid>
+  </div>
+</div>

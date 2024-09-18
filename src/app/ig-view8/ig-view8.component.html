@@ -1,0 +1,127 @@
+<div class="column-layout group">
+  <div class="row-layout group_1">
+    <h4 class="h4">
+      K-rad
+    </h4>
+    <p class="text">
+      印税・契約書システム ＞ TOP ＞ 累計店別合計一覧（売上年月別）
+    </p>
+    <igx-simple-combo type="border" [data]="menuTable1?.posts!" placeholder="0000：ログイン者名" displayKey="menu" class="single-select-combo"></igx-simple-combo>
+  </div>
+  <button igxButton="contained" igxRipple class="button">
+    <igx-icon>
+      home
+    </igx-icon>
+  </button>
+  <div class="column-layout group_2">
+    <div class="row-layout group_1">
+      <p class="text_1">
+        処理年月
+      </p>
+      <igx-input-group type="border" size="medium" class="input">
+        <label igxLabel for="inputField"></label>
+        <input name="inputField" [required]="false" [disabled]="false" igxInput igxDateTimeEditor="yyyy/MM/dd" displayFormat="shortDate" [spinLoop]="true" />
+      </igx-input-group>
+    </div>
+    <div class="row-layout group_3">
+      <p class="text_2">
+        店
+      </p>
+      <igx-simple-combo type="border" [data]="shopTable1?.posts!" placeholder="000：全販売店" displayKey="店コード" class="single-select-combo_1"></igx-simple-combo>
+    </div>
+  </div>
+  <div class="row-layout group_4">
+    <div class="column-layout group_5">
+      <div class="row-layout group_6">
+        <h6 class="h6">
+          売上数計
+        </h6>
+      </div>
+      <p class="text_3">
+        9,999,999
+      </p>
+    </div>
+    <div class="column-layout group_7">
+      <div class="row-layout group_8">
+        <h6 class="h6">
+          販売定価計
+        </h6>
+      </div>
+      <p class="text_3">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_7">
+      <div class="row-layout group_8">
+        <h6 class="h6_1">
+          正味金額計
+        </h6>
+      </div>
+      <p class="text_3">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_7">
+      <div class="row-layout group_8">
+        <h6 class="h6_1">
+          消費税計
+        </h6>
+      </div>
+      <p class="text_3">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_7">
+      <div class="row-layout group_8">
+        <h6 class="h6_1">
+          請求金額計
+        </h6>
+      </div>
+      <p class="text_3">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_7">
+      <div class="row-layout group_8">
+        <h6 class="h6_1">
+          販売価格計
+        </h6>
+      </div>
+      <p class="text_3">
+        999,999,999.99
+      </p>
+    </div>
+  </div>
+  <div class="column-layout group_9">
+    <igx-grid [data]="sampleTable1?.posts!" primaryKey="店（コード：店名）" height="650px" class="grid">
+      <igx-grid-toolbar>
+        <igx-grid-toolbar-actions>
+          <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+        </igx-grid-toolbar-actions>
+        <igx-grid-toolbar-title>Grid Toolbar</igx-grid-toolbar-title>
+      </igx-grid-toolbar>
+      <igx-column field="店（コード：店名）" dataType="string" header="店（コード：店名）" [selectable]="false"></igx-column>
+      <igx-paginator [perPage]="10"></igx-paginator>
+      <igx-column field="取込日付" dataType="string" header="取込日付" [selectable]="false"></igx-column>
+      <igx-column field="売上数" dataType="string" header="売上数" [selectable]="false"></igx-column>
+      <igx-column field="販売定価" dataType="string" header="販売定価" [selectable]="false"></igx-column>
+      <igx-column field="正味金額" dataType="string" header="正味金額" [selectable]="false"></igx-column>
+      <igx-column field="消費税" dataType="string" header="消費税" [selectable]="false"></igx-column>
+      <igx-column field="請求金額" dataType="string" header="請求金額" [selectable]="false"></igx-column>
+      <igx-column field="販売価格" dataType="string" header="販売価格" [selectable]="false"></igx-column>
+    </igx-grid>
+    <igx-dialog [closeOnOutsideSelect]="true" #dialog11>
+      <ng-container>
+        <p>Excel出力しますか</p>
+      </ng-container>
+      <igx-dialog-actions>
+        <button igxButton="flat" igxRipple [igxToggleAction]="dialog11">
+          キャンセル
+        </button>
+        <button igxButton="flat" igxRipple [igxToggleAction]="dialog11">
+          OK
+        </button>
+      </igx-dialog-actions>
+    </igx-dialog>
+  </div>
+</div>

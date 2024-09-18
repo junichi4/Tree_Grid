@@ -1,0 +1,163 @@
+<div class="column-layout group">
+  <div class="row-layout group_1">
+    <h4 class="h4">
+      K-rad
+    </h4>
+    <p class="text">
+      印税・契約書システム ＞ TOP ＞ 当月書誌別合計一覧
+    </p>
+    <igx-simple-combo type="border" [data]="menuTable1?.posts!" placeholder="0000：ログイン者名" displayKey="menu" class="single-select-combo"></igx-simple-combo>
+  </div>
+  <button igxButton="contained" igxRipple class="button">
+    <igx-icon>
+      home
+    </igx-icon>
+  </button>
+  <div class="column-layout group_2">
+    <div class="row-layout group_3">
+      <p class="text_1">
+        処理年月
+      </p>
+      <igx-input-group type="border" size="small" class="input">
+        <label igxLabel for="inputField"></label>
+        <input name="inputField" [required]="false" [disabled]="false" igxInput igxDateTimeEditor="yyyy/MM/dd" displayFormat="shortDate" [spinLoop]="true" />
+      </igx-input-group>
+      <p class="text_2">
+        書誌分類
+      </p>
+      <igx-buttongroup class="button-group">
+        <button igxButton igxRipple>
+          電子書籍
+        </button>
+        <button igxButton igxRipple>
+          電子（コミック）
+        </button>
+      </igx-buttongroup>
+    </div>
+    <div class="row-layout group_4">
+      <p class="text_3">
+        書名
+      </p>
+      <igx-input-group type="border" class="input_1">
+        <input type="text" igxInput />
+      </igx-input-group>
+      <p class="text_4">
+        5桁コード
+      </p>
+      <igx-input-group type="border" class="input_2">
+        <input type="text" igxInput />
+      </igx-input-group>
+      <p class="text_5">
+        ～
+      </p>
+      <igx-input-group type="border" class="input_3">
+        <input type="text" igxInput />
+      </igx-input-group>
+    </div>
+    <div class="row-layout group_5">
+      <p class="text_6">
+        著者名
+      </p>
+      <igx-input-group type="border" class="input_1">
+        <input type="text" placeholder="代表著者　or　共著者" igxInput />
+      </igx-input-group>
+      <p class="text_7">
+        品目コード
+      </p>
+      <igx-input-group type="border" class="input_4">
+        <input type="text" igxInput />
+      </igx-input-group>
+    </div>
+    <div class="row-layout group_5"></div>
+  </div>
+  <div class="row-layout group_6">
+    <button igxButton="contained" igxRipple [igxToggleAction]="dialog17" class="button_1">
+      検索
+    </button>
+    <igx-dialog [closeOnOutsideSelect]="true" #dialog17>
+      <ng-container>
+        <p>検索しますか</p>
+      </ng-container>
+      <igx-dialog-actions>
+        <button igxButton="flat" igxRipple [igxToggleAction]="dialog17">
+          キャンセル
+        </button>
+        <button igxButton="flat" igxRipple [igxToggleAction]="dialog17">
+          OK
+        </button>
+      </igx-dialog-actions>
+    </igx-dialog>
+  </div>
+  <div class="row-layout group_7">
+    <div class="column-layout group_8">
+      <div class="row-layout group_9">
+        <h6 class="h6">
+          販売数計
+        </h6>
+      </div>
+      <p class="text_8">
+        9,999,999
+      </p>
+    </div>
+    <div class="column-layout group_10">
+      <div class="row-layout group_9">
+        <h6 class="h6">
+          販売定価計
+        </h6>
+      </div>
+      <p class="text_8">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_10">
+      <div class="row-layout group_9">
+        <h6 class="h6">
+          正味金額計
+        </h6>
+      </div>
+      <p class="text_8">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_10">
+      <div class="row-layout group_9">
+        <h6 class="h6">
+          販売価格計
+        </h6>
+      </div>
+      <p class="text_8">
+        999,999,999.99
+      </p>
+    </div>
+    <div class="column-layout group_11">
+      <div class="row-layout group_9">
+        <h6 class="h6">
+          請求金額計
+        </h6>
+      </div>
+      <p class="text_8">
+        999,999,999.99
+      </p>
+    </div>
+  </div>
+  <div class="column-layout group_12">
+    <igx-tree-grid [data]="northwindEmployees" primaryKey="employeeID" foreignKey="managerID" [allowFiltering]="true" filterMode="excelStyleFilter" class="tree-grid">
+      <igx-column field="employeeID" dataType="number" header="employeeID" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="lastName" dataType="string" header="lastName" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="firstName" dataType="string" header="firstName" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="title" dataType="string" header="title" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="titleOfCourtesy" dataType="string" header="titleOfCourtesy" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="birthDate" dataType="date" header="birthDate" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="hireDate" dataType="date" header="hireDate" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="address.street" dataType="string" header="address street" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="address.city" dataType="string" header="address city" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="address.region" dataType="string" header="address region" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="address.postalCode" dataType="string" header="address postalCode" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="address.country" dataType="string" header="address country" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="address.phone" dataType="string" header="address phone" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="managerID" dataType="number" header="managerID" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="notes" dataType="string" header="notes" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+      <igx-column field="avatarUrl" dataType="string" header="avatarUrl" [filterable]="true" [sortable]="true" [selectable]="false"></igx-column>
+    </igx-tree-grid>
+  </div>
+</div>
